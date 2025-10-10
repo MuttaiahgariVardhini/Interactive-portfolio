@@ -84,9 +84,9 @@ window.projectsData = [
 window.certificatesData = [
     {
     title: "Introduction to Generative AI",
-    org: "Microsoft",
+    org: "Simplilearn",
     year: "2025",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg",
     file: "assets/IntroductionToGenAI.png"
   },
   {
@@ -131,6 +131,23 @@ window.certificatesData = [
     year: "2024",
     logo: "https://tse2.mm.bing.net/th/id/OIP.DRL6d_9m5DgFlEvGcI6CNAHaEP?pid=Api&P=0&h=180", 
     file: "assets/C.jpg"
+  },
+  
+  {
+    title: "Introduction to MsExcel",
+    org: "Simplilearn",
+    year: "2025",
+    logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg", 
+    file: "assets/IntroductionToMsExcel.jpg"
+  },
+  {
+    title: "Python Programming",
+    org:"cisco",
+    year: "2024",
+    logo:"https://tse1.mm.bing.net/th/id/OIP.SNLWCAwEUqRKH_TdYJmi_gHaHa?pid=Api",
+    file:"assets/Python programming(Cisco).pdf"
+
   }
+
 
 ];
