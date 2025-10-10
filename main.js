@@ -3,15 +3,12 @@
 // -------------------- PORTFOLIO DATA --------------------
 window.portfolioData = window.portfolioData || {};
 
-
 // -------------------- PORTFOLIO DATA --------------------
 window.portfolioData = {
     info: {
         name: "Vardhini",
         profilePicture: "assets/Profile.jpg",
-        about: "I’m Vardhini, a 3rd-year Data Science student with a strong passion for web development and building interactive digital experiences. Alongside my academic work, I actively work on personal projects that combine analytical thinking with creative design.  
-
-I enjoy developing clean, responsive, and user-friendly websites while exploring modern web technologies. My goal is to grow as a skilled developer, contribute to impactful projects, and continuously enhance my technical and problem-solving abilities.",
+        about: "I'm Vardhini, a 3rd-year Data Science student with a strong passion for web development and building interactive digital experiences.\n\nI enjoy developing clean, responsive, and user-friendly websites while exploring modern web technologies. My goal is to grow as a skilled developer, contribute to impactful projects, and continuously enhance my technical and problem-solving abilities.",
         contact: {
             email: "muttaihvardhini@gmail.com",
             linkedin: "https://www.linkedin.com/in/muttaiah-gari-vardhini-680540308",
@@ -29,16 +26,6 @@ I enjoy developing clean, responsive, and user-friendly websites while exploring
     certificates: window.certificatesData || []
 };
 
-// Optional: clear localStorage to prevent old taglines being loaded
-
-
-
-// Ensure other sections exist
-window.portfolioData.skills = window.skillsData || [];
-window.portfolioData.education = window.educationData || [];
-window.portfolioData.projects = window.projectsData || [];
-window.portfolioData.certificates = window.certificatesData || [];
-
 // -------------------- DOM CONTENT LOADED --------------------
 document.addEventListener("DOMContentLoaded", () => {
     renderPortfolio();
@@ -46,15 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
     initNavbarToggle();
     initDarkMode();
 
-    // Initialize EmailJS if loaded
     if (typeof emailjs !== "undefined") {
-        emailjs.init("3Hm6ICdyO0i3TOfhu"); // Your EmailJS User ID
+        emailjs.init("3Hm6ICdyO0i3TOfhu");
         initContactForm();
     } else {
         console.warn("EmailJS not loaded, contact form won't work");
     }
 
-    // Update footer year
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
@@ -76,7 +61,7 @@ function renderHero() {
     if (nameEl) nameEl.textContent = `Hello, I'm ${data.name}`;
     const profileEl = document.getElementById("profile-pic");
     if (profileEl) {
-        profileEl.src = data.profilePicture || "assets/profile.jpg";
+        profileEl.src = data.profilePicture || "assets/Profile.jpg";
         profileEl.alt = `${data.name}'s Profile Picture`;
     }
     const aboutEl = document.getElementById("about-text");
@@ -212,19 +197,7 @@ function renderCertificates() {
 
             viewBtn.addEventListener("click", () => {
                 const fileUrl = cert.file;
-                if (fileUrl.startsWith("blob:") || fileUrl.startsWith("data:")) {
-                    const newWindow = window.open("", "_blank");
-                    if (newWindow) {
-                        newWindow.document.write(`
-                            <html>
-                                <head><title>${cert.title || "Certificate"}</title></head>
-                                <body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#111;">
-                                    <iframe src="${fileUrl}" width="90%" height="90%" style="border:none;border-radius:10px;"></iframe>
-                                </body>
-                            </html>
-                        `);
-                    }
-                } else if (fileUrl.startsWith("http") || fileUrl.startsWith("assets/")) {
+                if (fileUrl.startsWith("http") || fileUrl.startsWith("assets/")) {
                     window.open(fileUrl, "_blank", "noopener,noreferrer");
                 } else {
                     alert("Certificate file not found or invalid path.");
