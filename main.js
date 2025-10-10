@@ -8,7 +8,7 @@ window.portfolioData = window.portfolioData || {};
 window.portfolioData = {
     info: {
         name: "Vardhini",
-        profilePicture: "assets/profile.jpg",
+        profilePicture: "assets/Profile.jpg",
         about: "I’m Vardhini, a 3rd-year Data Science student with a strong passion for web development and building interactive digital experiences. Alongside my academic work, I actively work on personal projects that combine analytical thinking with creative design.  
 
 I enjoy developing clean, responsive, and user-friendly websites while exploring modern web technologies. My goal is to grow as a skilled developer, contribute to impactful projects, and continuously enhance my technical and problem-solving abilities.",
@@ -319,3 +319,4 @@ function initDarkMode() {
 function saveData() {
     localStorage.setItem("portfolioData", JSON.stringify(window.portfolioData));
 }
+
