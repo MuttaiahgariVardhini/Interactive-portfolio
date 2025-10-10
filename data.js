@@ -141,7 +141,6 @@ window.certificatesData = [
     file: "assets/IntroductionToMsExcel.pdf"
 },
 
- },
 {
     title: "Python Programming",
     org: "Cisco",
@@ -152,5 +151,6 @@ window.certificatesData = [
 
 
 ];
+
 
 
