@@ -132,15 +132,8 @@ window.certificatesData = [
     logo: "https://tse2.mm.bing.net/th/id/OIP.DRL6d_9m5DgFlEvGcI6CNAHaEP?pid=Api&P=0&h=180", 
     file: "assets/C.jpg"
   }
-    {
-    title: "Introduction to Ms Excel",
-    org: "Simplilearn",
-    year: "2025",
-    logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg", 
-    file: "assets/Introduction to MsExcel.jpg"
-  }
-    
 
 ];
+
 
 
