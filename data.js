@@ -138,8 +138,9 @@ window.certificatesData = [
     org: "Simplilearn",
     year: "2025",
     logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg", 
-    file: "assets/IntroductionToMsExcel.jpg"
-  },
+    file: "assets/IntroductionToMsExcel.pdf"
+},
+
   {
     title: "Python Programming",
     org:"cisco",
@@ -151,3 +152,4 @@ window.certificatesData = [
 
 
 ];
+
