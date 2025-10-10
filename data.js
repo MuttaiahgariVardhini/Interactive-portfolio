@@ -141,15 +141,16 @@ window.certificatesData = [
     file: "assets/IntroductionToMsExcel.pdf"
 },
 
-  {
+ },
+{
     title: "Python Programming",
-    org:"cisco",
+    org: "Cisco",
     year: "2024",
-    logo:"https://tse1.mm.bing.net/th/id/OIP.SNLWCAwEUqRKH_TdYJmi_gHaHa?pid=Api",
-    file:"assets/Python programming(Cisco).pdf"
-
-  }
+    logo: "https://tse1.mm.bing.net/th/id/OIP.SNLWCAwEUqRKH_TdYJmi_gHaHa?pid=Api",
+    file: "assets/Python programming(Cisco).pdf"
+}
 
 
 ];
+
 
