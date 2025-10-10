@@ -9,7 +9,7 @@ const tabButtons = document.querySelectorAll(".tab-btn");
 
 // ----- LOAD PORTFOLIO DATA FROM localStorage -----
 window.portfolioData = JSON.parse(localStorage.getItem("portfolioData")) || window.portfolioData || {
-  info: { name: "Vardhini", profilePicture: "assets/Profile.jpg", about: "", taglines: [] },
+  info: { name: "Vardhini", profilePicture: "assets/profile.jpg", about: "", taglines: [] },
   skills: [],
   education: [],
   projects: [],
@@ -331,4 +331,5 @@ function deleteCertificate(i) { window.portfolioData.certificates.splice(i, 1); 
 
 // ===== INIT ADMIN -----
 initAdmin();
+
 
