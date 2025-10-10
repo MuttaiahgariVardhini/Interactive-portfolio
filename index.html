@@ -1,158 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vardhini's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-</head>
-<body>
+// ----- SKILLS -----
+window.skillsData = [
+  { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+  { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "Mongodb", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+];
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar">
-    <div class="logo">Muttaiah Gari Vardhini</div>
-    <div id="nav-toggle" class="hamburger">&#9776;</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="assets/Resume.pdf" download class="btn">Resume</a></li>
-      <li><a href="#" id="admin-toggle" class="btn">Admin Mode</a></li>
-    </ul>
-  </nav>
+// ----- EDUCATION -----
+window.educationData = [
+  {
+    degree: "Bachelor of Technology in Computer Science",
+    org: "HITAM",
+    year: "2023-2027",
+    cgpa: "8.7",
+    logo: "https://tse3.mm.bing.net/th/id/OIP.tLpCiQbB1MiWSTS8r4iOQgHaJH?pid=Api&P=0&h=180"
+  },
+  {
+    degree: "Higher Secondary Education: Science(Physics,Chemistry,Maths)",
+    org: "Sri Chaitanya College",
+    year: "2023",
+    cgpa: "9.85",
+    logo: "https://tse1.mm.bing.net/th/id/OIP.Q2YWYDW62D49oSNqtObO6wHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    degree: "School (10th Grade)",
+    org: "Shanthinikethan High School",
+    year: "2021",
+    cgpa: "10.0",
+    logo: "https://yt3.googleusercontent.com/9cepzTb8Z8_OhFyr6x4Kdaiectu7WD3E2BcwvwwDTkC294tciQjSXJ79_fWTOmgA1Iq4yu57Tss=s900-c-k-c0x00ffffff-no-rj"
+  }
+];
 
-  <!-- ===== HOME ===== -->
-  <section id="home" class="section home-section">
-    <div class="hero-container">
-      <div class="hero-text">
-        <h1 id="user-name">Hello, I'm Vardhini</h1>
-        <h2 id="tagline" class="fade"></h2>
-      </div>
-      <img id="profile-pic" src="assets/Profile.jpg" alt="Profile Picture">
-    </div> 
-  </section>
+// ----- PROJECTS -----
+window.projectsData = [
+  {
+    title: "Portfolio Website",
+    image: "assets/Portfolio.png",
+    desc: "A responsive personal portfolio website showcasing my skills, projects, and achievements. Built with HTML, CSS, and JavaScript featuring dark mode toggle and smooth animations.",
+    tags: ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    title: "CodeSaga",
+    image: "assets/CodeSaga.png",
+    desc: "Full-stack educational platform that teaches Java programming through interactive games. Combines learning with gamification to make programming concepts more engaging.",
+    tags: ["Java", "MySQL"]
+  },
+  {
+    title: "BMICalculator",
+    image: "assets/BMICalculator.png",
+    desc: "Django-based web application for calculating Body Mass Index with user-friendly interface. Features input validation and health recommendations based on BMI results.",
+    tags: ["Django", "Python", "HTML/CSS"]
+  },
+  {
+    title: "Recipebook",
+    image: "assets/Recipebook.jpg",
+    desc: "An interactive recipe book where users can explore recipes with ingredients and steps. Responsive design for mobile and desktop.",
+    tags: ["React", "JavaScript", "CSS"]
+  },
+  {
+    title: "PhoneDirectory",
+    image: "assets/PhoneDirectory.png",
+    desc: "A web application to manage and search contacts in a phone directory. Features include adding, editing, deleting, and searching contacts with a clean UI.",
+    tags: ["HTML", "CSS", "Doubly Linked List"]
+  }
+];
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section about-section fade-in-up">
-    <h2>About Me</h2>
-    <p id="about-text"></p>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section skills-section">
-    <h2>My Skills</h2>
-    <div class="skills-container" id="skills-container"></div>
-  </section>
-
-  <!-- ===== EDUCATION ===== -->
-  <section id="education" class="section education-section fade-in-up">
-    <h2>Education</h2>
-    <div class="education-container" id="education-container"></div>
-  </section>
-
-  <!-- ===== CERTIFICATES ===== -->
-  <section id="certificates" class="section certificates-section fade-in-up">
-    <h2>Certificates</h2>
-    <div class="certificates-container" id="certificates-container"></div>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section projects-section fade-in-up">
-    <h2>Projects</h2>
-    <div class="projects-container" id="projects-container"></div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section contact-section fade-in-up">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="info-item">
-          <span class="icon"><i class="fas fa-envelope"></i></span>
-          <a id="contact-email" href="#" target="_blank"></a>
-        </div>
-        <div class="info-item">
-          <span class="icon"><i class="fab fa-linkedin"></i></span>
-          <a id="contact-linkedin" href="#" target="_blank"></a>
-        </div>
-        <div class="info-item">
-          <span class="icon"><i class="fab fa-github"></i></span>
-          <a id="contact-github" href="#" target="_blank"></a>
-        </div>
-      </div>
-
-      <div class="contact-form-container">
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="title" placeholder="Subject" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-          <p id="form-status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ADMIN MODAL ===== -->
-  <div id="admin-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h2>Admin Panel</h2>
-      <div class="admin-tabs">
-        <button class="tab-btn" data-section="skills">Skills</button>
-        <button class="tab-btn" data-section="education">Education</button>
-        <button class="tab-btn" data-section="projects">Projects</button>
-        <button class="tab-btn" data-section="certificates">Certificates</button>
-        <button class="tab-btn" data-section="about">About</button>   
-      </div>
-      <div id="admin-form-container" class="form-container"></div>
-      <button id="reset-portfolio" class="btn reset-btn">Reset Portfolio</button>
-    </div>
-  </div>
-
-  <!-- ===== SCRIPTS ===== -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("3Hm6ICdyO0i3TOfhu");
-  </script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
-  <script src="admin.js"></script>
-
-  <footer class="footer">
-    <div class="footer-container">
-      <p class="footer-quote">“Code your dreams into reality.”</p>
-      <div class="footer-nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-socials-bar">
-        <a href="https://linkedin.com/in/muttaiah-gari-vardhini-680540308" target="_blank" class="social-circle linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://github.com/MuttaiahgariVardhini" target="_blank" class="social-circle github">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:muttaihvardhini@gmail.com" class="social-circle email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      <p class="footer-copy">© <span id="current-year"></span> Vardhini. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
-
+// ----- CERTIFICATES -----
+window.certificatesData = [
+  {
+    title: "Introduction to Generative AI",
+    org: "Simplilearn",
+    year: "2025",
+    logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg",
+    file: "assets/IntroductionToGenAI.png"
+  },
+  {
+    title: "Adobe Hackathon – Quiz Certificate",
+    org: "Adobe",
+    year: "2024",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlNrbK5Lf_5bDDZmKNaIf5IfwVtZ1ZvJzaJg&s",
+    file: "assets/AdobeCertificate.jpg"
+  },
+  {
+    title: "Smart India Hackathon 2024",
+    org: "Government of India",
+    year: "2024",
+    logo: "https://tse3.mm.bing.net/th/id/OIP.RnMv8cfOjDvG6MeDaDhzcwHaEo?pid=Api&P=0&h=180",
+    file: "assets/SIHCertificate.jpg"
+  },
+  {
+    title: "Data Science and Analytics Certification",
+    org: "HP Foundation",
+    year: "2024",
+    logo: "https://tse1.mm.bing.net/th/id/OIP.TVMjqLuMoGwxVhU2HqH88gAAAA?pid=Api&P=0&h=180",
+    file: "assets/HpLife.pdf"
+  },
+  {
+    title: "NPTEL-Elite Certificate",
+    org: "Fundamental Algorithms: Design and Analysis",
+    year: "2025",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8kkKvc0BLJZvNb2TNTofXyY-3VsLYhbtf5Q&s",
+    file: "assets/NPTEL.pdf"
+  },
+  {
+    title: "Data Analytics Job Simulation",
+    org: "Deloitte",
+    year: "2025",
+    logo: "https://logos-world.net/wp-content/uploads/2021/08/Deloitte-Emblem.png",
+    file: "assets/Deloitte.jpg"
+  },
+  {
+    title: "C Language",
+    org: "Infosys",
+    year: "2024",
+    logo: "https://tse2.mm.bing.net/th/id/OIP.DRL6d_9m5DgFlEvGcI6CNAHaEP?pid=Api&P=0&h=180",
+    file: "assets/C.jpg"
+  },
+  {
+    title: "Introduction to MsExcel",
+    org: "Simplilearn",
+    year: "2025",
+    logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg",
+    file: "assets/IntroductionToMsExcel.pdf"
+  },
+  {
+    title: "Python Programming",
+    org: "Cisco",
+    year: "2024",
+    logo: "https://tse1.mm.bing.net/th/id/OIP.SNLWCAwEUqRKH_TdYJmi_gHaHa?pid=Api",
+    file: "assets/Python_programming_Cisco.pdf"
+  }
+];
