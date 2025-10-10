@@ -5,17 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vardhini's Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
-      <div class="logo"> Muttaiah Gari Vardhini</div>
+      <div class="logo">Muttaiah Gari Vardhini</div>
       <div id="nav-toggle" class="hamburger">&#9776;</div>
       <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -29,23 +25,22 @@
           <li><a href="#" id="admin-toggle" class="btn">Admin Mode</a></li>
       </ul>
   </nav>
+
   <!-- ===== HOME ===== -->
   <section id="home" class="section home-section">
-    <div class="hero-container">
-      <div class="hero-text">
-        <h1 id="user-name">Hello, I'm Vardhini</h1>
-        <h2 id="tagline" class="fade"></h2>
+      <div class="hero-container">
+          <div class="hero-text">
+              <h1 id="user-name">Hello, I'm Vardhini</h1>
+              <h2 id="tagline" class="fade"></h2>
+          </div>
+          <img id="profile-pic" src="assets/Profile.jpg" alt="Profile Picture">
       </div>
-      <img id="profile-pic" src="assets/Profile.jpg" alt="Profile Picture">
-    </div> 
   </section>
 
   <!-- ===== ABOUT ===== -->
   <section id="about" class="section about-section fade-in-up">
       <h2>About Me</h2>
-      <p id="about-text">I’m Vardhini, a 3rd-year Data Science student with a strong passion for web development and building interactive digital experiences. Alongside my academic work, I actively work on personal projects that combine analytical thinking with creative design.  
-
-I enjoy developing clean, responsive, and user-friendly websites while exploring modern web technologies. My goal is to grow as a skilled developer, contribute to impactful projects, and continuously enhance my technical and problem-solving abilities.</p>
+      <p id="about-text"></p>
   </section>
 
   <!-- ===== SKILLS ===== -->
@@ -57,14 +52,14 @@ I enjoy developing clean, responsive, and user-friendly websites while exploring
 
   <!-- ===== EDUCATION ===== -->
   <section id="education" class="section education-section fade-in-up">
-    <h2>Education</h2>
-    <div class="education-container" id="education-container"></div>
+      <h2>Education</h2>
+      <div class="education-container" id="education-container"></div>
   </section>
 
   <!-- ===== CERTIFICATES ===== -->
   <section id="certificates" class="section certificates-section fade-in-up">
-    <h2>Certificates</h2>
-    <div class="certificates-container" id="certificates-container"></div>
+      <h2>Certificates</h2>
+      <div class="certificates-container" id="certificates-container"></div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
@@ -72,129 +67,90 @@ I enjoy developing clean, responsive, and user-friendly websites while exploring
       <h2>Projects</h2>
       <div class="projects-container" id="projects-container"></div>
   </section>
-  
+
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="section contact-section fade-in-up">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
+      <h2>Contact Me</h2>
+      <div class="contact-container">
+          <!-- Contact Info -->
+          <div class="contact-info">
+              <div class="info-item">
+                  <span class="icon"><i class="fas fa-envelope" style="color:#ff7f00"></i></span>
+                  <a id="contact-email" href="#" target="_blank"></a>
+              </div>
+              <div class="info-item">
+                  <span class="icon"><i class="fab fa-linkedin" style="color:#0077B5"></i></span>
+                  <a id="contact-linkedin" href="#" target="_blank"></a>
+              </div>
+              <div class="info-item">
+                  <span class="icon"><i class="fab fa-github" style="color:#fff"></i></span>
+                  <a id="contact-github" href="#" target="_blank"></a>
+              </div>
+          </div>
 
-      <!-- Contact Info Cards -->
-      <div class="contact-info">
-        <div class="info-item">
-          <span class="icon">
-            <svg width="24" height="24" fill="#ff7f00" viewBox="0 0 24 24">
-              <path d="M2 4v16h20V4H2zm18 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
-            </svg>
-          </span>
-          <a id="contact-email" href="#" target="_blank"></a>
-        </div>
-
-        <div class="info-item">
-          <span class="icon">
-            <svg width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
-              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.75v2.16h.05c.52-.99 1.8-2.04 3.7-2.04 3.95 0 4.68 2.6 4.68 5.97V24h-4v-7.75c0-1.85-.03-4.24-2.58-4.24-2.58 0-2.97 2.01-2.97 4.08V24h-4V8z"/>
-            </svg>
-          </span>
-          <a id="contact-linkedin" href="#" target="_blank"></a>
-        </div>
-
-        <div class="info-item">
-          <span class="icon">
-            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">
-              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.88.58.11.79-.25.79-.56v-2.12c-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.75.4-1.25.72-1.54-2.56-.29-5.26-1.28-5.26-5.72 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.45.11-3.03 0 0 .97-.31 3.18 1.18a11.03 11.03 0 012.9-.39c.98 0 1.97.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.74.11 3.03.73.81 1.18 1.84 1.18 3.1 0 4.45-2.7 5.42-5.28 5.71.41.36.78 1.08.78 2.18v3.24c0 .31.21.68.8.56C20.71 21.38 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/>
-            </svg>
-          </span>
-          <a id="contact-github" href="#" target="_blank"></a>
-        </div>
+          <!-- Contact Form -->
+          <div class="contact-form-container">
+              <form id="contact-form">
+                  <input type="text" name="name" placeholder="Your Name" required />
+                  <input type="email" name="email" placeholder="Your Email" required />
+                  <input type="text" name="title" placeholder="Subject" required />
+                  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                  <button type="submit">Send Message</button>
+                  <p id="form-status"></p>
+              </form>
+          </div>
       </div>
-
-      <!-- Contact Form -->
-      <div class="contact-form-container">
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="title" placeholder="Subject" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-          <p id="form-status"></p>
-        </form>
-      </div>
-
-    </div>
   </section>
-
-
 
   <!-- ===== ADMIN MODAL ===== -->
   <div id="admin-modal" class="modal">
       <div class="modal-content">
           <span class="close-btn">&times;</span>
           <h2>Admin Panel</h2>
-
-          <!-- Admin Tabs -->
           <div class="admin-tabs">
               <button class="tab-btn" data-section="skills">Skills</button>
               <button class="tab-btn" data-section="education">Education</button>
               <button class="tab-btn" data-section="projects">Projects</button>
               <button class="tab-btn" data-section="certificates">Certificates</button>
-              <button class="tab-btn" data-section="about">About</button>   
-              
-
+              <button class="tab-btn" data-section="about">About</button>
           </div>
-
-          <!-- Container for dynamic form -->
           <div id="admin-form-container" class="form-container"></div>
-
           <button id="reset-portfolio" class="btn reset-btn">Reset Portfolio</button>
       </div>
   </div>
+
   <!-- ===== SCRIPTS ===== -->
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+      emailjs.init("3Hm6ICdyO0i3TOfhu");
+  </script>
 
-<!-- ✅ Load EmailJS SDK from jsDelivr -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Local Scripts -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="admin.js"></script>
 
-<!-- ✅ Initialize EmailJS before main.js -->
-<script>
-  emailjs.init("3Hm6ICdyO0i3TOfhu"); // Replace with your actual EmailJS public key
-</script>
-
-<!-- ✅ Load your local scripts AFTER EmailJS is initialized -->
-<script src="data.js"></script>
-<script src="main.js"></script>
-<script src="admin.js"></script>
-
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Tagline / Quote -->
-    <p class="footer-quote">“Code your dreams into reality.”</p>
-
-    <!-- Quick navigation -->
-    <div class="footer-nav">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <!-- Social icons rounded bar -->
-    <div class="footer-socials-bar">
-      <a href="https://linkedin.com/in/muttaiah-gari-vardhini-680540308" target="_blank" class="social-circle linkedin">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/MuttaiahgariVardhini" target="_blank" class="social-circle github">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:muttaihvardhini@gmail.com" class="social-circle email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-
-    <!-- Copyright -->
-    <p class="footer-copy">© <span id="current-year"></span> Vardhini. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+      <div class="footer-container">
+          <p class="footer-quote">“Code your dreams into reality.”</p>
+          <div class="footer-nav">
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#education">Education</a>
+              <a href="#certificates">Certificates</a>
+              <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-socials-bar">
+              <a href="https://linkedin.com/in/muttaiah-gari-vardhini-680540308" target="_blank" class="social-circle linkedin"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/MuttaiahgariVardhini" target="_blank" class="social-circle github"><i class="fab fa-github"></i></a>
+              <a href="mailto:muttaihvardhini@gmail.com" class="social-circle email"><i class="fas fa-envelope"></i></a>
+          </div>
+          <p class="footer-copy">© <span id="current-year"></span> Vardhini. All rights reserved.</p>
+      </div>
+  </footer>
 
 </body>
 </html>
