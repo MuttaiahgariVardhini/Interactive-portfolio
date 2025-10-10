@@ -84,9 +84,9 @@ window.projectsData = [
 window.certificatesData = [
     {
     title: "Introduction to Generative AI",
-    org: "Simplilearn",
+    org: "Microsoft",
     year: "2025",
-    logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
     file: "assets/IntroductionToGenAI.png"
   },
   {
@@ -134,6 +134,3 @@ window.certificatesData = [
   }
 
 ];
-
-
-
