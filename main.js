@@ -2,7 +2,7 @@
 window.portfolioData = {
     info: {
         name: "Vardhini",
-        profilePicture: "assets/Profile.jpg",
+        profilePicture: "assets/profile.jpg",
         about: "I’m Vardhini, a 3rd-year Data Science student with a strong passion for web development and building interactive digital experiences. Alongside my academic work, I actively work on personal projects that combine analytical thinking with creative design.\n\nI enjoy developing clean, responsive, and user-friendly websites while exploring modern web technologies. My goal is to grow as a skilled developer, contribute to impactful projects, and continuously enhance my technical and problem-solving abilities.",
         contact: {
             email: "muttaihvardhini@gmail.com",
@@ -194,3 +194,4 @@ function initDarkMode() {
     const toggle = document.getElementById("dark-mode-toggle");
     if (toggle) toggle.addEventListener("click", () => document.body.classList.toggle("dark-mode"));
 }
+
