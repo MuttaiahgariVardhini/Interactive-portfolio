@@ -1,3 +1,4 @@
+
 // =================== ADMIN.JS ===================
 
 // ----- GLOBAL VARIABLES -----
@@ -331,5 +332,3 @@ function deleteCertificate(i) { window.portfolioData.certificates.splice(i, 1); 
 
 // ===== INIT ADMIN -----
 initAdmin();
-
-
