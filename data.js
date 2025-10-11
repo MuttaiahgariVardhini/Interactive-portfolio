@@ -139,6 +139,7 @@ window.certificatesData = [
     year: "2025",
     logo: "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/06/simplilearn-1655124308.jpg", 
     file: "assets/IntroductionToMsExcel.pdf"
+    
 },
 
 {
@@ -147,10 +148,12 @@ window.certificatesData = [
     year: "2024",
     logo: "https://tse1.mm.bing.net/th/id/OIP.SNLWCAwEUqRKH_TdYJmi_gHaHa?pid=Api",
     file: "assets/Python programming(Cisco).pdf"
+    
 }
 
 
 ];
+
 
 
 
