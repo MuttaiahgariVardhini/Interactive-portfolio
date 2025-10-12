@@ -41,28 +41,36 @@ function initAdmin() {
   });
 }
 
-// ----- RESET PORTFOLIO (Cleaner, no reload) -----
+// ----- RESET PORTFOLIO (Load default from data.js) -----
 resetPortfolio.addEventListener("click", () => {
   if (confirm("Reset portfolio?")) {
-    window.portfolioData = {
-      info: {
-        name: "Vardhini",
-        profilePicture: "assets/Profile.jpg",
-        about: "I'm Vardhini, a 3rd-year Data Science student...",
-        contact: { email: "", linkedin: "", github: "" },
-        taglines: []
-      },
-      skills: [],
-      education: [],
-      projects: [],
-      certificates: []
+    // Restore default info (optional)
+    window.portfolioData.info = {
+      name: "Vardhini",
+      profilePicture: "assets/Profile.jpg",
+      about: "I'm Vardhini, a 3rd-year Data Science student...",
+      contact: { email: "muttaihvardhini@gmail.com", linkedin: "https://www.linkedin.com/in/muttaiah-gari-vardhini-680540308", github: "https://github.com/MuttaiahgariVardhini" },
+      taglines: [
+        "Web Developer | Problem Solver | Learner.",
+        "Frontend Developer",
+        "Passionate about Data Science and AI"
+      ]
     };
 
-    saveData();        // save immediately
-    renderAllTabs();   // re-render all visible sections without reload
-    alert("Portfolio reset successfully!");
+    // Restore default arrays from data.js
+    window.portfolioData.skills = window.skillsData ? [...window.skillsData] : [];
+    window.portfolioData.education = window.educationData ? [...window.educationData] : [];
+    window.portfolioData.projects = window.projectsData ? [...window.projectsData] : [];
+    window.portfolioData.certificates = window.certificatesData ? [...window.certificatesData] : [];
+
+    // Save and re-render
+    saveData();
+    renderAllTabs();
+    renderPortfolio();  // make changes visible on the page
+    alert("Portfolio reset successfully! Default data restored.");
   }
 });
+
 
 // Function to re-render all sections
 function renderAllTabs() {
@@ -352,4 +360,5 @@ function deleteCertificate(i) { window.portfolioData.certificates.splice(i, 1); 
 
 // ===== INIT ADMIN -----
 initAdmin();
+
 
