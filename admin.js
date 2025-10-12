@@ -41,14 +41,34 @@ function initAdmin() {
   });
 }
 
-// ----- RESET PORTFOLIO -----
+// ----- RESET PORTFOLIO (Cleaner, no reload) -----
 resetPortfolio.addEventListener("click", () => {
   if (confirm("Reset portfolio?")) {
-    window.portfolioData = { skills: [], projects: [], certificates: [], education: [], info: {} };
-    saveData();
-    location.reload();
+    window.portfolioData = {
+      info: {
+        name: "Vardhini",
+        profilePicture: "assets/Profile.jpg",
+        about: "I'm Vardhini, a 3rd-year Data Science student...",
+        contact: { email: "", linkedin: "", github: "" },
+        taglines: []
+      },
+      skills: [],
+      education: [],
+      projects: [],
+      certificates: []
+    };
+
+    saveData();        // save immediately
+    renderAllTabs();   // re-render all visible sections without reload
+    alert("Portfolio reset successfully!");
   }
 });
+
+// Function to re-render all sections
+function renderAllTabs() {
+  tabButtons.forEach(btn => renderForm(btn.dataset.section));
+}
+
 
 // ----- TAB SWITCH -----
 tabButtons.forEach(btn => {
@@ -332,3 +352,4 @@ function deleteCertificate(i) { window.portfolioData.certificates.splice(i, 1); 
 
 // ===== INIT ADMIN -----
 initAdmin();
+
