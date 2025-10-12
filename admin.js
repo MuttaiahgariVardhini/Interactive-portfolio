@@ -1,4 +1,3 @@
-
 // =================== ADMIN.JS ===================
 
 // ----- GLOBAL VARIABLES -----
@@ -8,13 +7,13 @@ const adminFormContainer = document.getElementById("admin-form-container");
 const resetPortfolio = document.getElementById("reset-portfolio");
 const tabButtons = document.querySelectorAll(".tab-btn");
 
-// ----- LOAD PORTFOLIO DATA FROM localStorage -----
+// ----- LOAD PORTFOLIO DATA FROM localStorage OR DEFAULTS -----
 window.portfolioData = JSON.parse(localStorage.getItem("portfolioData")) || window.portfolioData || {
-  info: { name: "Vardhini", profilePicture: "assets/profile.jpg", about: "", taglines: [] },
-  skills: [],
-  education: [],
-  projects: [],
-  certificates: []
+  info: window.defaultInfo || { name: "Vardhini", profilePicture: "assets/profile.jpg", about: "", taglines: [] },
+  skills: window.skillsData ? [...window.skillsData] : [],
+  education: window.educationData ? [...window.educationData] : [],
+  projects: window.projectsData ? [...window.projectsData] : [],
+  certificates: window.certificatesData ? [...window.certificatesData] : []
 };
 
 // ----- SAVE DATA FUNCTION -----
@@ -41,42 +40,24 @@ function initAdmin() {
   });
 }
 
-// ----- RESET PORTFOLIO (Load default from data.js) -----
+// ----- RESET PORTFOLIO (Load from data.js) -----
 resetPortfolio.addEventListener("click", () => {
-  if (confirm("Reset portfolio?")) {
-    // Restore default info (optional)
-    window.portfolioData.info = {
-      name: "Vardhini",
-      profilePicture: "assets/Profile.jpg",
-      about: "I'm Vardhini, a 3rd-year Data Science student...",
-      contact: { email: "muttaihvardhini@gmail.com", linkedin: "https://www.linkedin.com/in/muttaiah-gari-vardhini-680540308", github: "https://github.com/MuttaiahgariVardhini" },
-      taglines: [
-        "Web Developer | Problem Solver | Learner.",
-        "Frontend Developer",
-        "Passionate about Data Science and AI"
-      ]
-    };
+  if (confirm("Reset portfolio to default data.js values?")) {
 
-    // Restore default arrays from data.js
+    // Restore default info and arrays from data.js
+    window.portfolioData.info = window.defaultInfo ? { ...window.defaultInfo } : { name: "Vardhini", profilePicture: "assets/Profile.jpg", about: "", taglines: [] };
     window.portfolioData.skills = window.skillsData ? [...window.skillsData] : [];
     window.portfolioData.education = window.educationData ? [...window.educationData] : [];
     window.portfolioData.projects = window.projectsData ? [...window.projectsData] : [];
     window.portfolioData.certificates = window.certificatesData ? [...window.certificatesData] : [];
 
-    // Save and re-render
+    // Save and re-render everything
     saveData();
     renderAllTabs();
     renderPortfolio();  // make changes visible on the page
-    alert("Portfolio reset successfully! Default data restored.");
+    alert("Portfolio reset successfully! Loaded from data.js defaults.");
   }
 });
-
-
-// Function to re-render all sections
-function renderAllTabs() {
-  tabButtons.forEach(btn => renderForm(btn.dataset.section));
-}
-
 
 // ----- TAB SWITCH -----
 tabButtons.forEach(btn => {
@@ -91,7 +72,6 @@ function setActiveTab(section) {
   const activeBtn = Array.from(tabButtons).find(b => b.dataset.section === section);
   if (activeBtn) activeBtn.classList.add("active");
 }
-
 // ===== RENDER FORM =====
 function renderForm(section) {
   adminFormContainer.innerHTML = "";
@@ -360,5 +340,6 @@ function deleteCertificate(i) { window.portfolioData.certificates.splice(i, 1); 
 
 // ===== INIT ADMIN -----
 initAdmin();
+
 
 
