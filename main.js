@@ -116,7 +116,6 @@ function renderEducation() {
         container.appendChild(card);
     });
 }
-
 // ---- PROJECTS SECTION ----
 function renderProjects() {
     const container = document.getElementById("projects-container");
@@ -129,12 +128,18 @@ function renderProjects() {
         const imgHtml = proj.image ? `<img src="${proj.image}" alt="${proj.title}">` : "<span>📌</span>";
         const linkHtml = proj.link ? `<a href="${proj.link}" target="_blank" class="view-btn">View Project</a>` : "";
 
+        // Ensure tags are displayed correctly whether array or string
+        let tagsText = "";
+        if (proj.tags) {
+            tagsText = Array.isArray(proj.tags) ? proj.tags.join(", ") : String(proj.tags);
+        }
+
         div.innerHTML = `
             <div class="timeline-icon">${imgHtml}</div>
             <div class="project-content">
                 <h3>${proj.title}</h3>
                 <p>${proj.desc}</p>
-                <p><strong>Tags:</strong> ${proj.tags ? proj.tags.join(", ") : ""}</p>
+                <p><strong>Tags:</strong> ${tagsText}</p>
                 ${linkHtml}
             </div>
         `;
@@ -292,4 +297,5 @@ function initDarkMode() {
 function saveData() {
     localStorage.setItem("portfolioData", JSON.stringify(window.portfolioData));
 }
+
 
