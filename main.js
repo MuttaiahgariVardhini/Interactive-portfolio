@@ -278,23 +278,27 @@ function startTaglineRotation() {
     }, 2500);
 }
 
-// ---- NAVBAR TOGGLE ----
 function initNavbarToggle() {
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.querySelector(".nav-links");
+
     if (navToggle && navLinks) {
-        navToggle.addEventListener("click", () => navLinks.classList.toggle("active"));
+        navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            navToggle.classList.toggle("open"); // <-- animate hamburger
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                if (navLinks.classList.contains("active")) {
+                    navLinks.classList.remove("active");
+                    navToggle.classList.remove("open");
+                }
+            });
+        });
     }
 }
-// ---- CLOSE NAV ON LINK CLICK ----
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        const navLinks = document.querySelector('.nav-links');
-        if (navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-        }
-    });
-});
+
 
 // ---- DARK MODE TOGGLE ----
 function initDarkMode() {
@@ -306,6 +310,7 @@ function initDarkMode() {
 function saveData() {
     localStorage.setItem("portfolioData", JSON.stringify(window.portfolioData));
 }
+
 
 
 
