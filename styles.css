@@ -1031,4 +1031,50 @@ h2 {
 #nav-toggle.open span {
   opacity: 0;
 }
+/* Mobile Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Show hamburger on mobile */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #383737;
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    gap: 10px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Animate hamburger into X */
+.hamburger.toggle .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle .line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
