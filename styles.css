@@ -301,7 +301,7 @@ h2 {
   }
 }
 
-/* ===== PROJECTS ===== */
+/* ===== PROJECTS ===== *//* -------------------- CONTAINER -------------------- */
 .projects-container {
   position: relative;
   display: flex;
@@ -322,6 +322,7 @@ h2 {
   z-index: 1;
 }
 
+/* -------------------- PROJECT CARD -------------------- */
 .project-card {
   position: relative;
   width: 40%;
@@ -331,11 +332,12 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(255,127,0,0.3);
   opacity: 0;
-  transition: all 0.8s ease;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  animation: fadeInUp 1s ease forwards;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .project-card.left {
@@ -379,12 +381,13 @@ h2 {
   transform: translateX(5px);
 }
 
+/* Active state for scroll animations */
 .project-card.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Timeline elements */
+/* -------------------- TIMELINE ELEMENTS -------------------- */
 .timeline-circle {
   position: absolute;
   left: 50%;
@@ -425,23 +428,47 @@ h2 {
   transform: scale(1);
 }
 
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------- RESPONSIVE -------------------- */
 @media screen and (max-width: 768px) {
   .project-card {
     width: 90%;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+
   .projects-container::before {
     left: 30px;
   }
+
   .timeline-circle {
     left: 30px;
   }
+
   .timeline-line {
     width: 20px !important;
     left: 40px !important;
   }
+
+  .project-card.left,
+  .project-card.right {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    align-self: flex-start;
+  }
 }
+
 
 /* ===== CERTIFICATES ===== */
 .certificates-section {
@@ -967,3 +994,41 @@ h2 {
   color: #bbb;
   margin-top: 1rem;
 }
+#nav-toggle {
+  position: relative;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+#nav-toggle::before,
+#nav-toggle::after,
+#nav-toggle span {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #ff7f00;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+#nav-toggle span {
+  background: #ff7f00;
+}
+
+#nav-toggle.open::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#nav-toggle.open::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#nav-toggle.open span {
+  opacity: 0;
+}
+
