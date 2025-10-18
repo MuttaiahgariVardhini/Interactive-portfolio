@@ -278,6 +278,7 @@ function startTaglineRotation() {
     }, 2500);
 }
 
+
 function initNavbarToggle() {
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -300,6 +301,12 @@ function initNavbarToggle() {
 }
 
 
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  navToggle.classList.toggle('toggle');
+});
+
+
 // ---- DARK MODE TOGGLE ----
 function initDarkMode() {
     const toggle = document.getElementById("dark-mode-toggle");
@@ -310,6 +317,7 @@ function initDarkMode() {
 function saveData() {
     localStorage.setItem("portfolioData", JSON.stringify(window.portfolioData));
 }
+
 
 
 
