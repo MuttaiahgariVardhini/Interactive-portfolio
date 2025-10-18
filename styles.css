@@ -994,41 +994,64 @@ h2 {
   color: #bbb;
   margin-top: 1rem;
 }
-/* ---------------- Hamburger Button ---------------- */
-#nav-toggle {
-  display: none; /* hidden by default on desktop */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #383737;
   position: relative;
-  width: 30px;
-  height: 22px;
+  z-index: 100;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #ff7f00;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffaa42;
+}
+
+/* Hamburger */
+#nav-toggle {
+  display: none; /* show only on mobile */
   flex-direction: column;
   justify-content: space-between;
+  width: 25px;
+  height: 20px;
   cursor: pointer;
-  z-index: 10;
 }
 
 #nav-toggle span {
-  display: block;
-  height: 4px;
+  height: 3px;
   width: 100%;
-  background: #ff7f00;
+  background-color: #ff7f00;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Animate hamburger into X */
+/* Hamburger open state (X) */
 #nav-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 #nav-toggle.open span:nth-child(2) {
   opacity: 0;
 }
-
 #nav-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ---------------- Mobile Styles ---------------- */
+/* Mobile styles */
 @media screen and (max-width: 768px) {
   #nav-toggle {
     display: flex;
@@ -1038,23 +1061,21 @@ h2 {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* adjust to navbar height */
+    top: 60px;
     right: 0;
     background-color: #383737;
     width: 200px;
     padding: 20px;
     border-radius: 0 0 10px 10px;
     gap: 10px;
-    z-index: 9;
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  .nav-links li {
-    margin: 10px 0;
-    text-align: center;
+  .nav-links li a {
+    font-size: 16px;
   }
 }
 
