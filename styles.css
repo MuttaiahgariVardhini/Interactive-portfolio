@@ -994,20 +994,19 @@ h2 {
   color: #bbb;
   margin-top: 1rem;
 }
+/* ---------------- Hamburger Button ---------------- */
 #nav-toggle {
+  display: none; /* hidden by default on desktop */
   position: relative;
   width: 30px;
   height: 22px;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  z-index: 10;
 }
 
-#nav-toggle::before,
-#nav-toggle::after,
 #nav-toggle span {
-  content: '';
   display: block;
   height: 4px;
   width: 100%;
@@ -1016,65 +1015,46 @@ h2 {
   transition: all 0.3s ease;
 }
 
-#nav-toggle span {
-  background: #ff7f00;
-}
-
-#nav-toggle.open::before {
+/* Animate hamburger into X */
+#nav-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-#nav-toggle.open::after {
+#nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#nav-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-#nav-toggle.open span {
-  opacity: 0;
-}
-/* Mobile Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger .line {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.3s ease;
-}
-
-/* Show hamburger on mobile */
+/* ---------------- Mobile Styles ---------------- */
 @media screen and (max-width: 768px) {
-  .hamburger {
+  #nav-toggle {
     display: flex;
   }
+
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 60px; /* adjust to navbar height */
     right: 0;
     background-color: #383737;
     width: 200px;
     padding: 20px;
     border-radius: 0 0 10px 10px;
     gap: 10px;
+    z-index: 9;
   }
+
   .nav-links.active {
     display: flex;
   }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
 }
 
-/* Animate hamburger into X */
-.hamburger.toggle .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.toggle .line:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.toggle .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
