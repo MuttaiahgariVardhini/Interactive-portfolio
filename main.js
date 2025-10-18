@@ -286,6 +286,15 @@ function initNavbarToggle() {
         navToggle.addEventListener("click", () => navLinks.classList.toggle("active"));
     }
 }
+// ---- CLOSE NAV ON LINK CLICK ----
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
 
 // ---- DARK MODE TOGGLE ----
 function initDarkMode() {
@@ -297,5 +306,6 @@ function initDarkMode() {
 function saveData() {
     localStorage.setItem("portfolioData", JSON.stringify(window.portfolioData));
 }
+
 
 
