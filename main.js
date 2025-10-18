@@ -278,17 +278,18 @@ function startTaglineRotation() {
     }, 2500);
 }
 
-
 function initNavbarToggle() {
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.querySelector(".nav-links");
 
     if (navToggle && navLinks) {
+        // Toggle menu on hamburger click
         navToggle.addEventListener("click", () => {
             navLinks.classList.toggle("active");
-            navToggle.classList.toggle("open"); // <-- animate hamburger
+            navToggle.classList.toggle("open");
         });
 
+        // Close menu when clicking a link
         document.querySelectorAll(".nav-links a").forEach(link => {
             link.addEventListener("click", () => {
                 if (navLinks.classList.contains("active")) {
@@ -300,11 +301,8 @@ function initNavbarToggle() {
     }
 }
 
-
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  navToggle.classList.toggle('toggle');
-});
+// Initialize
+document.addEventListener("DOMContentLoaded", initNavbarToggle);
 
 
 // ---- DARK MODE TOGGLE ----
@@ -317,6 +315,7 @@ function initDarkMode() {
 function saveData() {
     localStorage.setItem("portfolioData", JSON.stringify(window.portfolioData));
 }
+
 
 
 
